@@ -29,7 +29,9 @@ struct Editprofile: View {
     @ObservedObject var personalData : PersonalData
     
     @State var progress = false
-    
+    @State var email = ""
+    @State var name = ""
+    @State var password = ""
     
     var body: some View {
         NavigationView{
@@ -60,7 +62,11 @@ struct Editprofile: View {
                                 .frame(width: width_height_image, height: width_height_image)
                                 .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
                             } placeholder: {
-                                ProgressView()
+//                                ProgressView()
+                                Circle()
+                                    .frame(width: width_height_image, height: width_height_image)
+                                   
+                                    .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
                             }
                             
                             
@@ -80,11 +86,50 @@ struct Editprofile: View {
                     .offset(x: 30, y: 40)
                     
                     }
-                .onTapGesture {
-                    self.showImagePicker.toggle()
-                }
-                .frame(width: 300, height: 200, alignment: .top)
-//                .background(Color.blue)
+                    .onTapGesture {
+                        self.showImagePicker.toggle()
+                    }
+                .frame(width: 300, height: 150, alignment: .top)
+
+//                VStack{
+//
+//                        HStack{
+//                            Image(systemName: "envelope.circle")
+//                                .resizable()
+//                                .foregroundColor(Color.black)
+//
+//                                .frame(width: 25, height: 25)
+//                            TextField("อีเมล",text: self.$email)
+//
+//
+//                        }
+//                        .padding()
+//                    Divider()
+//                    HStack{
+//                        Image(systemName: "person.crop.circle")
+//                            .resizable()
+//                            .foregroundColor(Color.black)
+//
+//                            .frame(width: 25, height: 25)
+//                        TextField("ชื่อ-นามสกุล",text: self.$name )
+//
+//
+//                    }
+//                    .padding()
+//                Divider()
+//                        HStack{
+//                            Image(systemName: "lock.circle")
+//                                .resizable()
+//                                .foregroundColor(Color.black)
+//
+//                                .frame(width: 25, height: 25)
+//                            SecureField("รหัสผ่าน",text: self.$password)
+//
+//                        }
+//                        .padding()
+//                }.frame(width: 300, height: 300, alignment: .top)
+//                    .background(Color.white)
+//                    .cornerRadius(5)
                 Button {
                     UploadImage()
                 } label: {
@@ -92,7 +137,8 @@ struct Editprofile: View {
                 }
 
         
-            }.frame(minWidth: 0,  maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
+            }
+            .frame(minWidth: 0,  maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
          
                 .sheet(isPresented: $showImagePicker) {
                     ImagePicker(sourceType: .photoLibrary) { image in
