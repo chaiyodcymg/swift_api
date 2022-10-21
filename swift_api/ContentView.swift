@@ -26,49 +26,70 @@ struct ContentView: View {
     @State var selection_page = 1
 
     @State var alert_infor = ""
-    
+    @StateObject var validate_email_data = Validate_Email_data()
     
    @StateObject var personalData = PersonalData()
-    
+    @ObservedObject var networkManager = NetworkManager()
 //    @ObservedObject var personalData : PersonalData
    
-    
+//    init(){
+//        UINavigationBar.appearance().backgroundColor =
+//    }
        var body: some View {
-           
-           if (personalData.Status || UserDefaults.standard.string(forKey: "session") != nil){
-               
-               Home( )
+           if !networkManager.isConnected {
+               ZStack {
+                   Color.white.ignoresSafeArea()
 
-           }
-           else{
-       
-               VStack{
-                   VStack{
-                       Picker("", selection: self.$selection_page) {
-                           Text("เข้าสู่ระบบ")
-                               .tag(1)
-                           Text("สมัครสมาชิก")
-                               .tag(2)
-                       }
-                   }
-                   .pickerStyle(.segmented)
-                   .background(.white)
-                   .padding(.horizontal,10)
-                   .padding(.top,20)
+                          VStack {
+                              Image(systemName: networkManager.imageName)
+                                  .resizable()
+                                  .scaledToFit()
+                                  .frame(width: 200, height: 200)
+                                  .foregroundColor(.black)
+
+                              Text(networkManager.connectionDescription)
+                                  .font(.system(size: 18, weight: .semibold))
+                                  .foregroundColor(.black)
+                                  .multilineTextAlignment(.center)
+                                  .padding()
+
+
+                                  Button {
+                                      print("Handle action..")
+                                  } label: {
+                                      Text("ลองอีกครั้ง")
+                                          .padding()
+                                          .font(.headline)
+                                          .foregroundColor(Color(.systemBlue))
+                                  }
+                                  .frame(width: 140)
+                                  .background(Color.white)
+                                  .clipShape(Capsule())
+                                  .padding()
+
+                          }
+                      }
+
+
+
+
+           }else{
+
+               if (personalData.status || UserDefaults.standard.string(forKey: "session") != nil){
+         
+                 Home()
+                      
                    
-                   if( self.selection_page == 1 ){
-                       Login(personalData: personalData)
-                   }else{
-                       Register(personalData: personalData )
-                   }
-                
-                    
+                      
+                   
+             
+
+                   
+               }else{
+                   Login(personalData: personalData)
                }
-               
-           
            }
-           
-           
+//
            
        }
   
@@ -80,30 +101,14 @@ struct ContentView: View {
 
 }
 
-struct Progressbar_screen: View {
-
-
-    var body: some View {
-        VStack{
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
-                .scaleEffect(1.5)
-        }
-       
-//        .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0,  maxHeight: .infinity, alignment: .center)
-//        .background(.white)
-        
-    }
-
-
-}
 
 
 
 
-struct ContentView_Previews: PreviewProvider {
-    @StateObject var personalData = PersonalData()
-    static var previews: some View {
-        ContentView()
-    }
-}
+
+//struct ContentView_Previews: PreviewProvider {
+//   
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

@@ -10,10 +10,9 @@ import SwiftUI
 
 struct dataEditprofile:Codable{
     var status:Bool
-//    var text:String
-//    var email:String
-//    var name:String
-    var imageUrl:String
+    var text:String
+
+
 }
 
 
@@ -23,145 +22,205 @@ struct Editprofile: View {
     @StateObject  var URL_API   = UrlAPI()
   
     @State var imageStr: String?
-    @State var imageData: Data?
+    @State var imageData: Data? = nil
     var width_height_image:Double = 100
     @State var imageUrl = ""
     @ObservedObject var personalData : PersonalData
     
-    @State var progress = false
+    @State var progress = true
     @State var email = ""
     @State var name = ""
     @State var password = ""
+    @FocusState var nameFocus :Bool
+    @State var name2 = ""
+   @State var Change = false
     
+    @ObservedObject var status_progress : CheckProgress
     var body: some View {
-        NavigationView{
-            
-            if(self.progress){
-                Progressbar_screen()
-            }else{
+       
+      
+      
+    NavigationView{
+      
+          
                 
           
-            VStack {
+       
+            
+          
+            VStack{
 
-                ZStack{
-                    if image != nil {
-                        Image(uiImage: image!)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                         .clipShape(Circle())
-                         .frame(width: width_height_image, height: width_height_image)
-                         .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
-                    }else{
+                
+             VStack {
+
               
-                        AsyncImage(url: URL(string: URL_API.URL+personalData.ImageUrl)){ image in
+                     ZStack{
+                         
+                        
+                         
+                         if image != nil {
+                             Image(uiImage: image!)
+                             .resizable()
+                             .aspectRatio(contentMode: .fill)
+                                 .clipShape(Circle())
+                                 .frame(width: width_height_image, height: width_height_image)
+                                 .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
+                         }else{
 
-                                image
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .clipShape(Circle())
-                                .frame(width: width_height_image, height: width_height_image)
-                                .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
-                            } placeholder: {
-//                                ProgressView()
-                                Circle()
-                                    .frame(width: width_height_image, height: width_height_image)
-                                   
-                                    .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
-                            }
-                            
-                            
-                    }
-                  
-                    ZStack{
-                        Image(systemName: "camera.fill")
+                             AsyncImage(url: URL(string: URL_API.URL+personalData.imageUrl)){ image in
+
+                                     image
+                                     .resizable()
+                                     .aspectRatio(contentMode: .fill)
+                                     .clipShape(Circle())
+                                     .frame(width: width_height_image, height: width_height_image)
+
+                                     .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
+
+
+                                 } placeholder: {
+                                     Image(systemName: "person.circle.fill")
+                                   .resizable()
+                                         .frame(width: width_height_image, height: width_height_image)
+                                         .foregroundColor(Color(red: 0.90, green: 0.90, blue: 0.90))
+                                         .overlay(Circle().stroke(Color(red: 0.90, green: 0.90, blue: 0.90), lineWidth: 10))
+                                 }
+
+
+
+
+                         }
+
+
+                     Image(systemName: "camera.fill")
                              .resizable()
                              .frame(width: 25, height:20)
                              .foregroundColor(Color.black)
-        
-                            
-                    }
-                    .frame(width: 40, height: 40)
-                    .background(Color(red: 0.90, green: 0.90, blue: 0.90))
-                    .cornerRadius(75)
-                    .offset(x: 30, y: 40)
-                    
-                    }
-                    .onTapGesture {
-                        self.showImagePicker.toggle()
-                    }
-                .frame(width: 300, height: 150, alignment: .top)
+                         .frame(width: 40, height: 40)
+                         .background(Color(red: 0.90, green: 0.90, blue: 0.90))
+                         .cornerRadius(75)
+                         .offset(x: 30, y: 40)
 
-//                VStack{
-//
-//                        HStack{
-//                            Image(systemName: "envelope.circle")
-//                                .resizable()
-//                                .foregroundColor(Color.black)
-//
-//                                .frame(width: 25, height: 25)
-//                            TextField("อีเมล",text: self.$email)
-//
-//
-//                        }
-//                        .padding()
-//                    Divider()
-//                    HStack{
-//                        Image(systemName: "person.crop.circle")
-//                            .resizable()
-//                            .foregroundColor(Color.black)
-//
-//                            .frame(width: 25, height: 25)
-//                        TextField("ชื่อ-นามสกุล",text: self.$name )
-//
-//
-//                    }
-//                    .padding()
-//                Divider()
-//                        HStack{
-//                            Image(systemName: "lock.circle")
-//                                .resizable()
-//                                .foregroundColor(Color.black)
-//
-//                                .frame(width: 25, height: 25)
-//                            SecureField("รหัสผ่าน",text: self.$password)
-//
-//                        }
-//                        .padding()
-//                }.frame(width: 300, height: 300, alignment: .top)
-//                    .background(Color.white)
-//                    .cornerRadius(5)
-                Button {
-                    UploadImage()
-                } label: {
-                    Text("บันทึก")
-                }
+                      
 
-        
-            }
-            .frame(minWidth: 0,  maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
-         
+                     }
+                 
+               
+
+//            Text("เปลี่ยนรูปโปรไฟล์")
+//                .foregroundColor(Color.blue)
+//                .padding(.top,20)
+                    }
+                .frame(width:150, height:130, alignment: .top )
                 .sheet(isPresented: $showImagePicker) {
                     ImagePicker(sourceType: .photoLibrary) { image in
                         self.image = image
-                       
                         self.imageData = image.jpegData(compressionQuality: 0.7)
                         print("image =",self.imageData)
-//                        self.imageStr =  imageData.base64EncodedString()
+
                     }
+                } .onTapGesture {
+
+                        self.showImagePicker.toggle()
                 }
-            }
+                    .onAppear{
+                        person_data()
+                    }
+
+                    VStack{
+                        HStack{
+                            TextField(personalData.name, text: self.$name )
+                
+                                .multilineTextAlignment( self.nameFocus ? .leading  :  .center)
+                                .frame(width:270, height:60 )
+                                .padding(.trailing,0)
+                                .font(.system(size: 20).weight(Font.Weight.bold))
+                                .focused($nameFocus)
+
+                            if(self.nameFocus ){
+
+                                if(!self.name.isEmpty){
+
+
+                                Image(systemName: "x.circle.fill")
+                                    .resizable()
+                                    .frame(width:22, height:21 )
+                                    .foregroundColor(Color(red: 0.65, green: 0.65, blue: 0.65))
+                                    .padding(.leading,0)
+                                    .onTapGesture{
+
+                                        self.name = ""
+                                    }
+
+
+                                }
+                            } else{
+                                ZStack{
+
+                                }
+                                .onAppear{
+                                    if(self.name.isEmpty){
+                                        self.name = personalData.name
+                                    }
+                                }
+                            }
+
+                            }
+                        Rectangle()
+                            .fill(Color(red: 0.95, green: 0.95, blue: 0.95))
+                            .frame(height: 2)
+                            .padding(.top,-20)
+                        }
+                    .frame(width: UIScreen.main.bounds.width - 100)
+
+
+
+                    }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .top)
             
-        }
-//        .navigationTitle("แก้ไขข้อมูลส่วนตัว")
-//        .navigationBarHidden(true)
-        .navigationBarItems( trailing:Text("แก้ไขข้อมูลส่วนตัว"))
-        .navigationBarTitleDisplayMode(.inline)
-  
-  
-    
-    
         
     }
+
+//    .toolbar{
+//        ToolbarItemGroup(placement: .navigationBarTrailing) {
+//
+//            if( (!self.name.isEmpty && self.name != personalData.Name) ||  self.imageData != nil){
+//                Button {
+//                    self.nameFocus = false
+//                    status_progress.StatusProgress = true
+//                    UploadImage()
+//                    DispatchQueue.main.asyncAfter(deadline: .now()+2){
+//
+//                        status_progress.StatusProgress = false
+//                    }
+//
+//
+//
+//                } label: {
+//                    Text("บันทึก")
+//                }
+//            }
+//
+//
+//
+//
+//        }
+//        ToolbarItemGroup(placement:.navigationBarLeading){
+//            Text("แก้ไขโปรไฟล์")
+//                .frame(minWidth: 0, maxWidth: .infinity,alignment: .center)
+//
+//                .padding(.leading,90)
+//        }
+//
+//
+//    }
+      
+      
+    
+      
+    }
+    
+    
     func person_data ()   {
         
 //        self.progress = true
@@ -194,12 +253,14 @@ struct Editprofile: View {
                            
                             if(res.status){
 //
-                                personalData.Status = res.status
+                                personalData.status = res.status
 
-                                personalData.Email = res.email
-                                personalData.Name = res.name
-                                personalData.Admin =  res.admin
-                                personalData.ImageUrl = res.imageUrl
+                                personalData.email = res.email
+                                self.name = res.name
+                                
+                                personalData.name = res.name
+                                personalData.role =  res.role
+                                personalData.imageUrl = res.imageUrl
                             }
 //                            self.page = res.status
                             print("Check =",res)
@@ -223,7 +284,7 @@ struct Editprofile: View {
         let url =  "\(URL_API.URL)edit_profile"
         var urlRequest = URLRequest(url: URL(string: url)!)
 
-        urlRequest.httpMethod = "post"
+        urlRequest.httpMethod = "PATCH"
         let bodyBoundary = "--------------------------\(UUID().uuidString)"
         urlRequest.addValue("multipart/form-data; boundary=\(bodyBoundary)", forHTTPHeaderField: "Content-Type")
         urlRequest.allHTTPHeaderFields = [
@@ -232,14 +293,10 @@ struct Editprofile: View {
         //attachmentKey is the api parameter name for your image do ask the API developer for this
        // file name is the name which you want to give to the file
         let parameters: String = UserDefaults.standard.string(forKey: "session")!
-       
-        var requestData = createRequestBody(imageData: self.imageData!, boundary: bodyBoundary, attachmentKey: "profilePicture", fileName: "myTestImage.jpg",id: parameters)
-      
-        
-      
-            
      
-         
+     
+        let  requestData = createRequestBody(imageData: self.imageData ?? Data() , boundary: bodyBoundary, attachmentKey: "profilePicture", fileName: "myTestImage.jpg",id: parameters)
+
         urlRequest.addValue("\(requestData.count)", forHTTPHeaderField: "content-length")
  
         urlRequest.httpBody = requestData
@@ -274,19 +331,26 @@ struct Editprofile: View {
         let user2 = "name"
        
          var requestBody = Data()
+        print("imageData = ", imageData.count)
+        if(imageData.count > 0){
+            
         
          requestBody.append("\(lineBreak)--\(boundary + lineBreak)" .data(using: .utf8)!)
          requestBody.append("Content-Disposition: form-data; name=\"\(attachmentKey)\"; filename=\"\(fileName)\"\(lineBreak)" .data(using: .utf8)!)
          requestBody.append("Content-Type: image/jpg \(lineBreak + lineBreak)" .data(using: .utf8)!)
          requestBody.append(imageData)
+        }
+      
+        if(self.name != personalData.name){
+            requestBody.append("\(lineBreak)--\(boundary + lineBreak)" .data(using: .utf8)!)
+            requestBody.append("Content-Disposition: form-data; name=\"\(user2)\" \(lineBreak + lineBreak)" .data(using: .utf8)!)
+            requestBody.append(self.name.data(using: .utf8) ?? Data())
+        }
+      
         
         requestBody.append("\(lineBreak)--\(boundary + lineBreak)" .data(using: .utf8)!)
         requestBody.append("Content-Disposition: form-data; name=\"\(user)\" \(lineBreak + lineBreak)" .data(using: .utf8)!)
         requestBody.append(id.data(using: .utf8) ?? Data())
-        
-        requestBody.append("\(lineBreak)--\(boundary + lineBreak)" .data(using: .utf8)!)
-        requestBody.append("Content-Disposition: form-data; name=\"\(user2)\" \(lineBreak + lineBreak)" .data(using: .utf8)!)
-        requestBody.append(personalData.Name.data(using: .utf8) ?? Data())
         
         
          requestBody.append("\(lineBreak)--\(boundary)--\(lineBreak)" .data(using: .utf8)!)

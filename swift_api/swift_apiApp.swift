@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct swift_apiApp: App {
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .accentColor(Color.purple)
         }
     }
 }

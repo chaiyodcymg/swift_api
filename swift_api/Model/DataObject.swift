@@ -17,22 +17,43 @@ struct data_login:Codable ,Hashable{
     var email:String
     var name:String
     var imageUrl:String
-    var admin:Int
+    var role:Int
  
 }
 
 
 class UrlAPI: ObservableObject {
-    @Published var URL  = "https://a2a7-14-207-201-133.ap.ngrok.io/"
+    @Published var URL  = "http://localhost:3000/"
     @Published var API_key = "813c33ee-d292-4060-884e-ec2897401990asd99sd"
 }
 
 
 class PersonalData: ObservableObject {
-    @Published var ImageUrl = ""
-    @Published var Name = ""
-    @Published var Email = ""
-    @Published var Status  = false
-    @Published var Text = ""
-    @Published var Admin = 0
+    @Published var session = ""
+    @Published var imageUrl = ""
+    @Published var name = ""
+    @Published var email = ""
+    @Published var status  = false
+    @Published var text = ""
+    @Published var role = 0
+}
+
+
+class CheckLogout: ObservableObject {
+    
+    @Published var Statuslogout  = false
+    
+}
+class CheckProgress: ObservableObject {
+    
+    @Published var StatusProgress  = false
+    
+}
+struct Validate_Email: Codable ,Hashable {
+    var email  :String
+    var time_end :Int
+}
+class Validate_Email_data: ObservableObject {
+    @Published var email  = ""
+    @Published var time_end = 0
 }

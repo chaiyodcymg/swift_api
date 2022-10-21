@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF2FBA1828603D8C00D73F88 /* Admin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FBA1728603D8C00D73F88 /* Admin.swift */; };
+		BF2FBA1A28608D6B00D73F88 /* Progressbar_screen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2FBA1928608D6B00D73F88 /* Progressbar_screen.swift */; };
+		BF33329028E2D964007242E7 /* Forget_password.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33328F28E2D964007242E7 /* Forget_password.swift */; };
 		BF33E25B284E0B45009B8704 /* ApiLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF33E25A284E0B45009B8704 /* ApiLogin.swift */; };
 		BF3DE7E02852243900F115FF /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF3DE7DF2852243900F115FF /* SideMenuView.swift */; };
 		BF45B68E284E194B00CC9B22 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF45B68D284E194B00CC9B22 /* Login.swift */; };
@@ -15,9 +18,12 @@
 		BF5B7B37285AFB0E0008679E /* Editprofile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B7B36285AFB0E0008679E /* Editprofile.swift */; };
 		BF6129FE285DBC8A00A643F2 /* DataObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6129FD285DBC8A00A643F2 /* DataObject.swift */; };
 		BF612A00285DC53C00A643F2 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6129FF285DC53C00A643F2 /* Register.swift */; };
+		BF6D6895286426CD00D72567 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6D6894286426CD00D72567 /* NetworkManager.swift */; };
+		BF90A21C285FA9020093B665 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF90A21B285FA9020093B665 /* Menu.swift */; };
 		BF95CA2E2853DA4F00B9AAA3 /* Checkin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF95CA2D2853DA4F00B9AAA3 /* Checkin.swift */; };
 		BFBD54AD285675D200A96FFE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBD54AC285675D200A96FFE /* LaunchScreen.storyboard */; };
 		BFD6434E284FE4E400D82F18 /* NotoSerifThai-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFD6434D284FE4E400D82F18 /* NotoSerifThai-Regular.ttf */; };
+		BFDA830128DEFCD600162C76 /* Register_validate_email.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDA830028DEFCD600162C76 /* Register_validate_email.swift */; };
 		BFF4F612284A8E3B00797A18 /* swift_apiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF4F611284A8E3B00797A18 /* swift_apiApp.swift */; };
 		BFF4F614284A8E3B00797A18 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF4F613284A8E3B00797A18 /* ContentView.swift */; };
 		BFF4F616284A8E3C00797A18 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFF4F615284A8E3C00797A18 /* Assets.xcassets */; };
@@ -46,6 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF2FBA1728603D8C00D73F88 /* Admin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Admin.swift; sourceTree = "<group>"; };
+		BF2FBA1928608D6B00D73F88 /* Progressbar_screen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progressbar_screen.swift; sourceTree = "<group>"; };
+		BF33328F28E2D964007242E7 /* Forget_password.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Forget_password.swift; sourceTree = "<group>"; };
 		BF33E25A284E0B45009B8704 /* ApiLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLogin.swift; sourceTree = "<group>"; };
 		BF3DE7DF2852243900F115FF /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		BF45B68D284E194B00CC9B22 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -54,9 +63,12 @@
 		BF5B7B36285AFB0E0008679E /* Editprofile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editprofile.swift; sourceTree = "<group>"; };
 		BF6129FD285DBC8A00A643F2 /* DataObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataObject.swift; sourceTree = "<group>"; };
 		BF6129FF285DC53C00A643F2 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		BF6D6894286426CD00D72567 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BF90A21B285FA9020093B665 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		BF95CA2D2853DA4F00B9AAA3 /* Checkin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkin.swift; sourceTree = "<group>"; };
 		BFBD54AC285675D200A96FFE /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BFD6434D284FE4E400D82F18 /* NotoSerifThai-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSerifThai-Regular.ttf"; sourceTree = "<group>"; };
+		BFDA830028DEFCD600162C76 /* Register_validate_email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register_validate_email.swift; sourceTree = "<group>"; };
 		BFF4F60E284A8E3B00797A18 /* swift_api.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift_api.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFF4F611284A8E3B00797A18 /* swift_apiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swift_apiApp.swift; sourceTree = "<group>"; };
 		BFF4F613284A8E3B00797A18 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +118,11 @@
 				BF5B7B36285AFB0E0008679E /* Editprofile.swift */,
 				BF5B412C285C56EB00272BEC /* ImagePicker.swift */,
 				BF6129FF285DC53C00A643F2 /* Register.swift */,
+				BF90A21B285FA9020093B665 /* Menu.swift */,
+				BF2FBA1728603D8C00D73F88 /* Admin.swift */,
+				BF2FBA1928608D6B00D73F88 /* Progressbar_screen.swift */,
+				BFDA830028DEFCD600162C76 /* Register_validate_email.swift */,
+				BF33328F28E2D964007242E7 /* Forget_password.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -116,6 +133,14 @@
 				BF6129FD285DBC8A00A643F2 /* DataObject.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BF6D68932864269E00D72567 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				BF6D6894286426CD00D72567 /* NetworkManager.swift */,
+			);
+			path = NetworkManager;
 			sourceTree = "<group>";
 		};
 		BFF4F605284A8E3B00797A18 = {
@@ -141,6 +166,7 @@
 		BFF4F610284A8E3B00797A18 /* swift_api */ = {
 			isa = PBXGroup;
 			children = (
+				BF6D68932864269E00D72567 /* NetworkManager */,
 				BF6129FC285DBC5800A643F2 /* Model */,
 				BFBD54AC285675D200A96FFE /* LaunchScreen.storyboard */,
 				BF45B68C284E191300CC9B22 /* screens */,
@@ -261,7 +287,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					BFF4F60D284A8E3B00797A18 = {
 						CreatedOnToolsVersion = 13.4.1;
@@ -331,15 +357,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF33E25B284E0B45009B8704 /* ApiLogin.swift in Sources */,
+				BFDA830128DEFCD600162C76 /* Register_validate_email.swift in Sources */,
 				BF5B7B37285AFB0E0008679E /* Editprofile.swift in Sources */,
 				BF6129FE285DBC8A00A643F2 /* DataObject.swift in Sources */,
+				BF2FBA1828603D8C00D73F88 /* Admin.swift in Sources */,
+				BF6D6895286426CD00D72567 /* NetworkManager.swift in Sources */,
 				BF3DE7E02852243900F115FF /* SideMenuView.swift in Sources */,
 				BF95CA2E2853DA4F00B9AAA3 /* Checkin.swift in Sources */,
 				BF45B68E284E194B00CC9B22 /* Login.swift in Sources */,
 				BF612A00285DC53C00A643F2 /* Register.swift in Sources */,
 				BFF4F614284A8E3B00797A18 /* ContentView.swift in Sources */,
 				BFF4F612284A8E3B00797A18 /* swift_apiApp.swift in Sources */,
+				BF90A21C285FA9020093B665 /* Menu.swift in Sources */,
 				BF5B412D285C56EB00272BEC /* ImagePicker.swift in Sources */,
+				BF2FBA1A28608D6B00D73F88 /* Progressbar_screen.swift in Sources */,
+				BF33329028E2D964007242E7 /* Forget_password.swift in Sources */,
 				BF45B690284E1A7C00CC9B22 /* Home.swift in Sources */,
 				BFF4F63D284A8E6000797A18 /* Jsonfeeddata.swift in Sources */,
 			);
@@ -382,6 +414,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -428,7 +461,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -442,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -482,7 +516,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -505,12 +539,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "swift-api-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "เจริญรักษ์";
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftUI_API;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -538,12 +575,15 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "swift-api-Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "เจริญรักษ์";
+				INFOPLIST_KEY_CFBundleDisplayName = SwiftUI_API;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
